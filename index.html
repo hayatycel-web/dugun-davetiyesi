@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Hasan & Sıla | Wedding</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;600&family=Playfair+Display:ital,wght@1,600&display=swap" rel="stylesheet">
+    <style>
+        body { margin: 0; font-family: 'Cormorant Garamond', serif; color: #2d2d2d; overflow-x: hidden; background: #fdfbf7; }
+        
+        /* ZARF EKRANI */
+        #envelope-layer { 
+            position: fixed; inset: 0; background: #2c3444; 
+            z-index: 1000; 
+            display: flex; flex-direction: column; align-items: center; justify-content: center; 
+            transition: 1.2s ease-in-out; cursor: pointer; color: #dcdcdc;
+        }
+        
+        .envelope-card { 
+            border: 1px solid #dcdcdc; padding: 40px; text-align: center; max-width: 80%; 
+            display: flex; flex-direction: column; align-items: center; background: #2c3444;
+        }
+        
+        .envelope-card h2 { font-family: 'Cormorant Garamond'; font-size: 24px; letter-spacing: 5px; margin-bottom: 5px; margin-top: 0; }
+        .envelope-card .date { font-size: 18px; border-top: 1px solid #dcdcdc; padding-top: 10px; margin-top: 10px; width: 100%; }
+        
+        /* DAVETİYE İÇERİĞİ */
+        .container { 
+            position: relative; z-index: 10; 
+            max-width: 500px; margin: 0 auto; text-align: center; opacity: 0; transition: 1s; padding: 20px; padding-bottom: 50px; 
+        }
+        .container.show { opacity: 1; }
+        
+        .hero-photo { width: 220px; height: 220px; object-fit: cover; border-radius: 50%; border: 5px double #c5a059; padding: 5px; margin-top: 80px; margin-bottom: 20px; background: #fff; box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+        
+        h1 { font-family: 'Playfair Display', serif; font-size: 52px; color: #b08a6a; margin: 10px 0; font-style: italic; }
+        
+        .invitation-text { font-size: 20px; line-height: 1.6; color: #333; margin: 25px 10px; font-weight: 600; text-shadow: 0 0 10px rgba(255,255,255,0.9); }
+        
+        .family-grid { display: flex; gap: 15px; justify-content: center; margin: 30px 10px; }
+        .family-box { padding: 15px 5px; border: 1px solid #c5a059; width: 45%; font-size: 15px; font-weight: 600; color: #444; background: rgba(255,255,255,0.85); border-radius: 8px; }
+        
+        .event-box { margin: 40px 10px; border: 1px solid #c5a059; padding: 25px; background: rgba(255,255,255,0.85); border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        .btn { display: inline-block; padding: 12px 30px; border: 1px solid #b08a6a; background: #fff; color: #b08a6a; text-decoration: none; letter-spacing: 2px; font-size: 14px; margin-top: 15px; font-weight: bold; border-radius: 30px; transition: 0.3s; }
+        
+        @media (max-width: 480px) {
+            h1 { font-size: 42px; }
+            .invitation-text { font-size: 18px; }
+            .family-box { font-size: 13px; }
+            .event-box { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <img src="hs.png" alt="Arkaplan" style="position: fixed; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top center; z-index: -5; opacity: 0.35;">
+
+    <div id="envelope-layer" onclick="openInvitation()">
+        <div class="envelope-card">
+            <h2>DAVETLİSİNİZ</h2>
+            <p style="font-size: 42px; margin: 10px 0; font-family: 'Playfair Display';">H & S</p>
+            <div class="date">19.07.2026</div>
+            <p style="margin-top: 15px; font-size: 11px; letter-spacing: 4px;">DAVETİYEYİ AÇINIZ</p>
+            
+            <img src="zarf.png" alt="Mühür" style="width: 180px; margin-top: 15px; display: block;">
+        </div>
+    </div>
+
+    <div class="container" id="content">
+        <img src="foto.jpeg" class="hero-photo" alt="Couple">
+        
+        <h1>Hasan & Sıla</h1>
+        
+        <div class="invitation-text">
+            Hayatımızın en özel anlarını paylaşacağımız, birlikteliğimizi sonsuzluğa taşıyacağımız düğün törenimizde siz değerli sevdiklerimizi aramızda görmekten onur ve mutluluk duyarız.
+        </div>
+
+        <div class="family-grid">
+            <div class="family-box">Nebahat & Ayhan Yücel</div>
+            <div class="family-box">Süheyla & Bülent Mutlu</div>
+        </div>
+
+        <div class="event-box">
+            <div style="font-size: 22px; color: #b08a6a; margin-bottom: 5px; font-weight: 600;">19 Temmuz 2026 • 19:00</div>
+            <div style="font-weight: 600; color: #444;">Ankara Konağı, Yenimahalle/Ankara</div>
+            <a href="https://www.google.com/maps?q=Ankara+Konağı+Yenimahalle" class="btn" target="_blank">YOL TARİFİ AL</a>
+        </div>
+
+        <div style="margin-bottom: 30px; background: rgba(255,255,255,0.85); padding: 20px; border-radius: 12px; display: inline-block;">
+            <p style="font-size: 12px; letter-spacing: 3px; margin-bottom: 15px; font-weight: 600; color: #555;">DÜĞÜN ALBÜMÜMÜZ</p>
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=140x140&data=DRIVE_LINKINIZ" alt="QR" style="border-radius: 8px;">
+        </div>
+    </div>
+
+    <script>
+        function openInvitation() {
+            document.getElementById('envelope-layer').style.opacity = '0';
+            setTimeout(() => {
+                document.getElementById('envelope-layer').style.display = 'none';
+            }, 1000);
+            
+            document.getElementById('content').classList.add('show');
+        }
+    </script>
+</body>
+</html>
