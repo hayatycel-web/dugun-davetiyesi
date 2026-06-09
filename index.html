@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hasan & Sıla | Davet</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@200;400&display=swap" rel="stylesheet">
+    <style>
+        :root { --gold: #c5a059; --bg: #fdfbf7; --text: #2d2d2d; }
+        
+        body { margin: 0; background: var(--bg); font-family: 'Montserrat', sans-serif; color: var(--text); overflow-x: hidden; }
+        
+        /* MODERN GİRİŞ (Zarf yerine zarif bir geçiş) */
+        #intro { position: fixed; inset: 0; background: #fff; z-index: 999; display: flex; align-items: center; justify-content: center; transition: 1s ease-out; }
+        #intro.hide { opacity: 0; pointer-events: none; }
+        .intro-text { text-align: center; cursor: pointer; border: 1px solid #eee; padding: 40px; }
+        .intro-text h2 { font-family: 'Cormorant Garamond', serif; font-size: 24px; letter-spacing: 5px; text-transform: uppercase; }
+
+        /* HERO */
+        .hero { padding: 60px 20px 20px; text-align: center; }
+        .hero img { width: 90%; max-width: 400px; border-radius: 4px; box-shadow: 0 30px 60px rgba(0,0,0,0.1); border: 8px solid white; }
+        .title { font-family: 'Cormorant Garamond', serif; font-size: 48px; margin: 30px 0 10px; }
+        .quote { font-style: italic; font-family: 'Cormorant Garamond', serif; font-size: 18px; opacity: 0.8; }
+
+        /* LÜKS KUTULAR */
+        .card { max-width: 500px; margin: 40px auto; padding: 40px; border: 1px solid #e8e0d5; background: #faf9f6; }
+        .family-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .family-box { padding: 15px; border: 1px solid var(--gold); font-size: 12px; letter-spacing: 1px; text-transform: uppercase; }
+
+        /* BİLGİLER */
+        .details { text-align: center; margin: 40px 0; }
+        .date-time { font-size: 20px; font-weight: 300; margin-bottom: 20px; }
+        .btn { border: 1px solid var(--gold); color: var(--gold); padding: 12px 30px; text-decoration: none; font-size: 12px; letter-spacing: 2px; transition: 0.4s; }
+        .btn:hover { background: var(--gold); color: white; }
+
+        /* QR */
+        .qr-section { margin-top: 60px; text-align: center; padding-bottom: 50px; }
+        .qr-section img { border: 1px solid #eee; padding: 10px; width: 150px; }
+    </style>
+</head>
+<body>
+
+    <div id="intro" onclick="this.classList.add('hide')">
+        <div class="intro-text">
+            <h2>Hasan & Sıla</h2>
+            <p>Davetiyeyi görüntülemek için dokunun</p>
+        </div>
+    </div>
+
+    <div class="hero">
+        <img src="foto.jpeg" alt="Wedding">
+        <div class="title">Hasan & Sıla</div>
+        <div class="quote">"Birlikte yazılan en güzel hikâye..."</div>
+    </div>
+
+    <div class="card">
+        <div class="family-grid">
+            <div class="family-box">Nebahat & Ayhan Yücel</div>
+            <div class="family-box">Süheyla & Bülent Mutlu</div>
+        </div>
+    </div>
+
+    <div class="details">
+        <div class="date-time">19 Temmuz 2026 • 19:00</div>
+        <p>Ankara Konağı, Yenimahalle</p>
+        <a class="btn" href="https://www.google.com/maps?q=Ankara+Konağı+Yenimahalle">KONUM BİLGİSİ</a>
+    </div>
+
+    <div class="qr-section">
+        <p style="font-size: 12px; letter-spacing: 2px;">ANILARIMIZI BİRLİKTE BİRİKTİRELİM</p>
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=GOOGLE_DRIVE_LINKINIZ" alt="QR">
+    </div>
+
+    <script>
+        // Müzik kontrolü eklemek istersen buraya ekleyebiliriz
+    </script>
+</body>
+</html>
