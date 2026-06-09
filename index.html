@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<title>Düğün Davetiyesi</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    background: #0e0e0f;
+    overflow-x: hidden;
+    font-family: 'Montserrat', sans-serif;
+    color: #e8e2d6;
+}
+
+/* arka plan shimmer */
+.bg {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at top, #1c1a18, #0e0e0f);
+    z-index: -2;
+}
+
+/* yapraklar */
+.leaf {
+    position: absolute;
+    top: -50px;
+    width: 18px;
+    height: 18px;
+    background: #c9b37e;
+    opacity: 0.6;
+    border-radius: 50% 0 50% 50%;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    0% { transform: translateY(-10vh) rotate(0deg); opacity: 0; }
+    10% { opacity: 0.8; }
+    100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+}
+
+.container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.photo {
+    width: 220px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #c9b37e;
+    box-shadow: 0 0 30px rgba(201,179,126,0.3);
+    margin-top: 40px;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    margin: 20px 0 10px;
+    letter-spacing: 1px;
+}
+
+.sub {
+    font-size: 14px;
+    letter-spacing: 3px;
+    color: #b9b0a3;
+    margin-bottom: 30px;
+}
+
+.names {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    margin: 20px 0;
+}
+
+.details {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #d6d0c6;
+}
+
+.date {
+    margin-top: 25px;
+    font-size: 18px;
+    color: #c9b37e;
+}
+
+.button {
+    margin-top: 35px;
+    display: inline-block;
+    padding: 12px 28px;
+    border: 1px solid #c9b37e;
+    color: #c9b37e;
+    text-decoration: none;
+    letter-spacing: 2px;
+    transition: 0.3s;
+}
+
+.button:hover {
+    background: #c9b37e;
+    color: #0e0e0f;
+}
+</style>
+</head>
+
+<body>
+
+<div class="bg"></div>
+
+<div class="container">
+
+    <img src="foto.jpeg" class="photo">
+
+    <div class="sub">DÜĞÜN DAVETİ</div>
+
+    <h1>Hasan & Sıla</h1>
+
+    <div class="names">Bir Ömür Boyu</div>
+
+    <div class="details">
+        Bu özel günümüzde sizleri de aramızda görmekten mutluluk duyarız.<br>
+        Sevgiyle başlayan yolculuğumuz, bir ömre dönüşüyor.
+    </div>
+
+    <div class="date">
+        19 TEMMUZ • 19:00<br>
+        İstanbul
+    </div>
+
+    <a href="#" class="button">DAVETE KATIL</a>
+
+</div>
+
+<script>
+// yaprak üretimi
+function createLeaf() {
+    const leaf = document.createElement("div");
+    leaf.classList.add("leaf");
+
+    leaf.style.left = Math.random() * window.innerWidth + "px";
+    leaf.style.animationDuration = (5 + Math.random() * 5) + "s";
+    leaf.style.opacity = Math.random();
+
+    document.body.appendChild(leaf);
+
+    setTimeout(() => {
+        leaf.remove();
+    }, 10000);
+}
+
+setInterval(createLeaf, 300);
+</script>
+
+</body>
+</html>
