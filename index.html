@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Hasan & Sıla | Wedding</title>
+    <!-- Lüks fontlar -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display:ital,wght@1,400;1,600&family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <style>
+        :root { --gold: #c5a059; --bg: #f5f2ed; }
+        body { margin: 0; background: var(--bg); font-family: 'Montserrat', sans-serif; color: #2d2d2d; }
+        
+        /* ZARF GİRİŞİ */
+        #intro { position: fixed; inset: 0; background: #e8e4de; z-index: 999; display: flex; align-items: center; justify-content: center; transition: 1.5s ease; cursor: pointer; }
+        .envelope-card { border: 1px solid var(--gold); padding: 40px; text-align: center; background: #fff; box-shadow: 0 0 50px rgba(0,0,0,0.1); }
+        
+        /* ANA TASARIM */
+        .page { max-width: 500px; margin: 0 auto; padding: 40px 20px; text-align: center; }
+        .golden-flower { width: 100px; margin-bottom: 20px; opacity: 0.9; }
+        h1 { font-family: 'Playfair Display', serif; font-style: italic; font-size: 55px; color: var(--gold); margin: 20px 0; }
+        
+        .section-title { font-family: 'Cinzel', serif; font-size: 14px; letter-spacing: 5px; opacity: 0.7; margin-bottom: 15px; }
+        .details-box { border-top: 1px solid var(--gold); border-bottom: 1px solid var(--gold); padding: 20px; margin: 30px 0; }
+        
+        .nav-btn { display: inline-block; padding: 15px 30px; border: 1px solid var(--gold); color: var(--gold); text-decoration: none; font-size: 12px; letter-spacing: 3px; transition: 0.5s; margin-top: 15px; }
+        .nav-btn:hover { background: var(--gold); color: white; }
+    </style>
+</head>
+<body>
+
+    <!-- ZARF EKRANI -->
+    <div id="intro" onclick="this.classList.add('hide')">
+        <div class="envelope-card">
+            <p style="letter-spacing: 10px;">SİZLERİ ARAMIZDA GÖRMEKTEN</p>
+            <p style="font-size: 24px; font-family: 'Playfair Display'; margin-top: 20px;">Mutluluk Duyarız</p>
+            <p style="margin-top: 30px; font-size: 10px; letter-spacing: 5px;">(GİRİŞ İÇİN DOKUNUN)</p>
+        </div>
+    </div>
+
+    <!-- DAVETİYE SAYFASI -->
+    <div class="page">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Gold_Flower_Icon.svg/100px-Gold_Flower_Icon.svg.png" class="golden-flower" alt="Gold Motif">
+        <p class="section-title">AİLELERİMİZİN KATILIMLARIYLA</p>
+        
+        <h1>Hasan<br>&<br>Sıla</h1>
+        
+        <p>19 Temmuz 2026 • 19:00</p>
+        
+        <div class="details-box">
+            <p>Ankara Konağı</p>
+            <p style="font-size: 14px; opacity: 0.8;">Çamlıca, 137. Sk. No: 2, Yenimahalle/Ankara</p>
+            <a href="https://www.google.com/maps?q=Ankara+Konağı+Yenimahalle" class="nav-btn" target="_blank">YOL TARİFİ AL</a>
+        </div>
+
+        <div style="margin-top: 40px;">
+            <p class="section-title">DİJİTAL ANILIK</p>
+            <p style="font-size: 13px;">Düğün karelerinizi bizimle paylaşın</p>
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=DRIVE_LINKINIZ" alt="QR">
+        </div>
+    </div>
+
+    <style>.hide { opacity: 0; pointer-events: none; }</style>
+</body>
+</html>
