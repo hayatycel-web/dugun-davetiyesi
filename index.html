@@ -1,40 +1,247 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hasan & Sıla Düğün Davetiyesi</title>
-    <style>
-        body, html { margin: 0; padding: 0; height: 100%; font-family: 'Playfair Display', serif; color: #333; overflow-x: hidden; }
-        .hero { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('foto.jpg'); background-size: cover; color: white; text-align: center; }
-        h1 { font-size: 3rem; margin-bottom: 10px; }
-        .details { padding: 50px 20px; text-align: center; background: #fafafa; }
-        .qr-section { padding: 40px; background: #fff; text-align: center; }
-        /* Basit bir animasyon efekti için */
-        .gold-dust { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; background: url('https://www.transparenttextures.com/patterns/stardust.png'); opacity: 0.3; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hasan & Sıla | Wedding Invitation</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+body{
+margin:0;
+font-family:'Playfair Display',serif;
+background:#f7f1ef;
+overflow-x:hidden;
+color:#3a2e2a;
+}
+
+/* ---------- ENVELOPE INTRO ---------- */
+#envelope{
+position:fixed;
+inset:0;
+background:linear-gradient(135deg,#f6e7e0,#fff);
+display:flex;
+align-items:center;
+justify-content:center;
+z-index:9999;
+flex-direction:column;
+}
+
+.envelope-box{
+width:220px;
+height:140px;
+background:#fff;
+border:2px solid #d8b4a0;
+position:relative;
+cursor:pointer;
+box-shadow:0 20px 40px rgba(0,0,0,0.1);
+}
+
+.envelope-box:before{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:0;height:0;
+border-left:110px solid transparent;
+border-right:110px solid transparent;
+border-top:80px solid #e7c9bb;
+transform-origin:top;
+transition:0.6s;
+}
+
+#envelope.open{
+opacity:0;
+pointer-events:none;
+transition:1s;
+}
+
+/* ---------- GOLD PARTICLES ---------- */
+.particle{
+position:fixed;
+width:6px;height:6px;
+background:gold;
+border-radius:50%;
+opacity:0.6;
+animation:float 8s linear infinite;
+}
+
+@keyframes float{
+0%{transform:translateY(100vh) translateX(0);opacity:0}
+50%{opacity:1}
+100%{transform:translateY(-10vh) translateX(50px);opacity:0}
+}
+
+/* ---------- LEAVES ---------- */
+.leaf{
+position:fixed;
+top:-10%;
+font-size:18px;
+opacity:0.6;
+animation:fall 10s linear infinite;
+}
+
+@keyframes fall{
+0%{transform:translateY(0) rotate(0deg);}
+100%{transform:translateY(120vh) rotate(360deg);}
+}
+
+/* ---------- HERO ---------- */
+.hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+background:linear-gradient(rgba(255,255,255,0.4),rgba(255,255,255,0.7)), url('foto.jpg');
+background-size:cover;
+background-position:center;
+}
+
+.hero h1{
+font-size:3.2rem;
+letter-spacing:1px;
+}
+
+.hero p{
+font-size:1.2rem;
+}
+
+/* ---------- SECTIONS ---------- */
+.section{
+padding:60px 20px;
+text-align:center;
+background:#fff7f4;
+}
+
+.card{
+background:#fff;
+padding:25px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
+max-width:500px;
+margin:auto;
+}
+
+/* ---------- BUTTON ---------- */
+.btn{
+display:inline-block;
+margin-top:15px;
+padding:12px 20px;
+background:#c9a27e;
+color:#fff;
+text-decoration:none;
+border-radius:30px;
+transition:0.3s;
+}
+
+.btn:hover{
+background:#a87f5f;
+}
+
+/* ---------- PHOTO FRAME ---------- */
+.photo-frame{
+border:8px solid #e7d2c6;
+border-radius:20px;
+overflow:hidden;
+max-width:320px;
+margin:20px auto;
+box-shadow:0 10px 25px rgba(0,0,0,0.1);
+}
+
+.photo-frame img{
+width:100%;
+display:block;
+}
+
+/* ---------- FAMILY ---------- */
+.family{
+font-size:0.9rem;
+opacity:0.7;
+margin-top:10px;
+}
+</style>
 </head>
+
 <body>
-    <div class="gold-dust"></div>
-    
-    <div class="hero">
-        <h1>Hasan & Sıla</h1>
-        <p>19 Temmuz 2026 | 19.00</p>
-    </div>
 
-    <div class="details">
-        <h2>Ankara Konağı</h2>
-        <p>Çamlıca, 137. Sk. No: 2, Yenimahalle/Ankara</p>
-        </div>
+<!-- ENVELOPE -->
+<div id="envelope" onclick="openInvite()">
+<div class="envelope-box"></div>
+<p style="margin-top:20px;">Davetiye Aç</p>
+</div>
 
-    <div class="qr-section">
-        <h3>Düğün Fotoğraflarınız İçin</h3>
-        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=BURAYA_DRIVE_LINKINI_YAZ" alt="QR Kod">
-        <p>Anılarınızı bizimle paylaşın.</p>
-    </div>
+<!-- PARTICLES -->
+<script>
+for(let i=0;i<25;i++){
+let p=document.createElement("div");
+p.className="particle";
+p.style.left=Math.random()*100+"vw";
+p.style.animationDuration=(4+Math.random()*6)+"s";
+document.body.appendChild(p);
+}
 
-    <audio autoplay loop>
-        <source src="keman-muzigi.mp3" type="audio/mpeg">
-    </audio>
+for(let i=0;i<12;i++){
+let l=document.createElement("div");
+l.className="leaf";
+l.innerHTML="🍂";
+l.style.left=Math.random()*100+"vw";
+l.style.animationDuration=(6+Math.random()*5)+"s";
+document.body.appendChild(l);
+}
+
+function openInvite(){
+document.getElementById("envelope").classList.add("open");
+}
+</script>
+
+<!-- HERO -->
+<div class="hero">
+<h1>Hasan & Sıla</h1>
+<p>19 Temmuz Pazar | 19.00</p>
+<p class="family">Nebahat - Ayhan Yücel | Süheyla - Bülent Mutlu</p>
+</div>
+
+<!-- DETAILS -->
+<div class="section">
+<div class="card">
+<h2>Ankara Konağı</h2>
+<p>Çamlıca, 137. Sk. No: 2, Yenimahalle / Ankara</p>
+
+<a class="btn" href="https://www.google.com/maps?q=Ankara+Konağı+Yenimahalle" target="_blank">
+📍 Yol Tarifi Al
+</a>
+</div>
+</div>
+
+<!-- PHOTO -->
+<div class="section">
+<div class="card">
+<h3>Birlikte Bir Ömür</h3>
+
+<div class="photo-frame">
+<img src="foto.jpg" alt="Düğün Fotoğrafı">
+</div>
+
+<p>Bu özel günü bizimle paylaşmanızdan mutluluk duyarız.</p>
+</div>
+</div>
+
+<!-- QR -->
+<div class="section">
+<div class="card">
+<h3>Fotoğraflarınızı Paylaşın</h3>
+<p>Düğün anılarınızı QR kod ile bizimle paylaşabilirsiniz</p>
+
+<img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=GOOGLE_DRIVE_LINK" alt="QR">
+
+<p style="font-size:0.9rem;opacity:0.7;">
+Anılar bizim için çok değerli ✨
+</p>
+</div>
+</div>
+
 </body>
 </html>
