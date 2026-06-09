@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Hasan & Sıla | Wedding Invitation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root { --gold: #c5a059; --pink: #fdf5f5; --text: #2d2d2d; }
+        body { margin: 0; background: #fdfbf7; font-family: 'Cormorant Garamond', serif; color: var(--text); overflow-x: hidden; }
+
+        /* PIRIILTILAR İÇİN AYARLAR */
+        .sparkle { position: fixed; pointer-events: none; color: var(--gold); font-size: 10px; z-index: 10; animation: twinkle 4s infinite; }
+        @keyframes twinkle { 0%, 100% { opacity: 0; transform: scale(0); } 50% { opacity: 1; transform: scale(1); } }
+
+        /* GİRİŞ ZARFI */
+        #intro { position: fixed; inset: 0; background: linear-gradient(135deg, #fdfbf7, var(--pink)); z-index: 999; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: 1s ease-in-out; }
+        #intro.hide { opacity: 0; pointer-events: none; }
+        .envelope { border: 1px solid var(--gold); padding: 60px 40px; text-align: center; }
+
+        /* HERO - FOTOĞRAF VE İSİMLER */
+        .hero { padding: 60px 20px; text-align: center; }
+        .hero img { width: 220px; height: 220px; object-fit: cover; border-radius: 50%; border: 2px solid var(--gold); margin-bottom: 25px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+        .title { font-family: 'Playfair Display', serif; font-size: 52px; margin: 0; color: #1a1a1a; letter-spacing: 2px; }
+        .long-quote { font-style: italic; max-width: 450px; margin: 25px auto; line-height: 1.8; opacity: 0.8; font-size: 18px; }
+
+        /* AİLE VE BİLGİLER */
+        .section-label { font-size: 11px; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 15px; opacity: 0.5; }
+        .family-grid { display: flex; gap: 20px; justify-content: center; max-width: 400px; margin: 0 auto 40px; }
+        .family-box { padding: 12px; border: 1px solid #dcdcdc; width: 50%; font-size: 14px; }
+        
+        .event-info { margin: 40px 20px; padding: 30px; border-top: 1px solid #eee; border-bottom: 1px solid #eee; }
+        .date { font-size: 26px; color: var(--gold); font-weight: 600; margin-bottom: 10px; }
+
+        /* QR KART */
+        .qr-card { background: #fff; padding: 40px; margin: 20px; border: 1px solid #f0f0f0; border-radius: 4px; }
+        .qr-card img { border: 1px solid #eee; padding: 10px; width: 140px; }
+    </style>
+</head>
+<body>
+
+    <!-- GİRİŞ EKRANI -->
+    <div id="intro" onclick="this.classList.add('hide')">
+        <div class="envelope">
+            <div style="font-size: 40px; margin-bottom: 20px;">✧</div>
+            <p style="font-size: 20px; letter-spacing: 3px;">HASAN & SILA</p>
+            <p style="font-size: 12px; letter-spacing: 4px; opacity: 0.7;">DAVETİYEYİ GÖRÜNTÜLE</p>
+        </div>
+    </div>
+
+    <!-- İÇERİK -->
+    <div class="hero">
+        <img src="foto.jpeg" alt="Hasan & Sıla">
+        <div class="title">Hasan & Sıla</div>
+        <p class="long-quote">"Hayatımızın en özel gününde, mutluluğumuzu taçlandıracağımız bu anlamlı yolculukta sizleri de aramızda görmekten büyük onur ve mutluluk duyarız."</p>
+    </div>
+
+    <div style="text-align: center;">
+        <div class="section-label">AİLELERİMİZ</div>
+        <div class="family-grid">
+            <div class="family-box">Nebahat & Ayhan Yücel</div>
+            <div class="family-box">Süheyla & Bülent Mutlu</div>
+        </div>
+    </div>
+
+    <div class="event-info" style="text-align: center;">
+        <div class="date">19 TEMMUZ 2026 • 19:00</div>
+        <div style="font-size: 18px;">Ankara Konağı, Yenimahalle</div>
+    </div>
+
+    <div class="qr-card" style="text-align: center;">
+        <p class="section-label">DİJİTAL ANILARIMIZ</p>
+        <p style="font-size: 15px; margin-bottom: 20px;">Düğün günü çektiğiniz tüm güzel kareleri<br>aşağıdaki kodla bizimle paylaşabilirsiniz.</p>
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=GOOGLE_DRIVE_LINKINIZ" alt="QR Kod">
+    </div>
+
+    <script>
+        // Pırıltı oluşturucu
+        function createSparkle() {
+            const s = document.createElement('div');
+            s.className = 'sparkle';
+            s.innerHTML = '✧';
+            s.style.left = Math.random() * 100 + 'vw';
+            s.style.top = Math.random() * 100 + 'vh';
+            s.style.animationDuration = (Math.random() * 3 + 2) + 's';
+            document.body.appendChild(s);
+            setTimeout(() => s.remove(), 4000);
+        }
+        setInterval(createSparkle, 500); // Sıklık ayarı
+    </script>
+</body>
+</html>
