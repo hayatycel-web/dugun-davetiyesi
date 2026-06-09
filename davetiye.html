@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hasan & Sıla Düğün Davetiyesi</title>
+    <style>
+        body, html { margin: 0; padding: 0; height: 100%; font-family: 'Playfair Display', serif; color: #333; overflow-x: hidden; }
+        .hero { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('foto.jpg'); background-size: cover; color: white; text-align: center; }
+        h1 { font-size: 3rem; margin-bottom: 10px; }
+        .details { padding: 50px 20px; text-align: center; background: #fafafa; }
+        .qr-section { padding: 40px; background: #fff; text-align: center; }
+        /* Basit bir animasyon efekti için */
+        .gold-dust { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; background: url('https://www.transparenttextures.com/patterns/stardust.png'); opacity: 0.3; }
+    </style>
+</head>
+<body>
+    <div class="gold-dust"></div>
+    
+    <div class="hero">
+        <h1>Hasan & Sıla</h1>
+        <p>19 Temmuz 2026 | 19.00</p>
+    </div>
+
+    <div class="details">
+        <h2>Ankara Konağı</h2>
+        <p>Çamlıca, 137. Sk. No: 2, Yenimahalle/Ankara</p>
+        </div>
+
+    <div class="qr-section">
+        <h3>Düğün Fotoğraflarınız İçin</h3>
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=BURAYA_DRIVE_LINKINI_YAZ" alt="QR Kod">
+        <p>Anılarınızı bizimle paylaşın.</p>
+    </div>
+
+    <audio autoplay loop>
+        <source src="keman-muzigi.mp3" type="audio/mpeg">
+    </audio>
+</body>
+</html>
